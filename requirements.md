@@ -52,3 +52,92 @@ An app to help people manage their garden.
 No API keys required — appropriate for a single-file HTML app with no secure backend.
 
 **Confirmation step** After lookup, app displays derived values (hemisphere, elevation, council/LGA, climate zone) with an edit option for each field, allowing users to correct any inaccuracies before proceeding.
+
+## Detailed requirements (Ben and Claude)
+### Req 1.1 — App startup behaviour
+
+- If a garden is already configured, it loads automatically on launch
+- New garden onboarding only triggers if no garden exists
+- A "New garden" or "Load garden" option is always accessible for users who want to switch
+
+### Req 1.2a — New garden onboarding flow
+
+1. User enters a street address
+2. App looks up and displays the following derived information for confirmation:
+   - Hemisphere
+   - Climate zone
+   - Elevation (metres)
+   - Frost risk
+   - Council/LGA (for noxious weed classifications)
+3. User confirms or edits each field before proceeding
+
+### Req 1.1a — Garden map setup
+
+After confirming location, user proceeds to define their garden map.
+
+[Introductory text to be written — approx. 2 paragraphs explaining what the garden map is and what the user needs to do to define it.]
+
+Steps:
+1. User enters block dimensions in square metres (width × height)
+2. App displays a grid with those dimensions, with grid references marked
+3. User defines which direction is north
+4. User optionally paints garden beds and buildings onto the grid using the cell painting tool
+
+Note: Map setup is optional — users can skip it entirely and proceed directly to plant inventory. Within the map, painting garden beds and buildings is also optional — plants can be placed on any cell regardless of its type.
+
+### Req 1.2b — Plant inventory setup
+
+After confirming the garden map (or skipping it), user proceeds to build their plant inventory.
+
+[Introductory text to be written — approx. 2 paragraphs explaining the plant inventory and what the user needs to do.]
+
+Steps:
+1. The garden grid is always visible during inventory entry so the user can locate grid references
+2. User can add a plant in either of two ways:
+   - Type a plant name and grid reference directly
+   - Select a cell on the grid, then add a plant to that cell
+3. Plants already entered are shown on the grid at their grid reference
+4. User can browse the list of plants already entered at any time
+
+### Req 2.3 — Plant identification and data sources
+
+**Identification level required:**
+Genus-level identification is sufficient for most management advice (pruning, feeding, watering, frost protection). Cultivar-level detail is only needed in specific cases (e.g. flower colour affecting hydrangea feeding).
+
+**Recommended data sources:**
+
+1. **Atlas of Living Australia (ALA)**
+   - Australian native plants, noxious weed classifications by state/LGA
+   - Free API, no key required
+   - `https://api.ala.org.au`
+
+2. **GBIF (Global Biodiversity Information Facility)**
+   - Global species taxonomy and occurrence data
+   - Free API, no key required
+   - `https://api.gbif.org/v1`
+
+3. **Trefle**
+   - Garden plant database designed for apps
+   - Good coverage of common cultivated plants
+   - Free tier available
+   - `https://trefle.io/api/v1`
+
+4. **PlantNet API**
+   - Photo-based plant identification
+   - Same database as the PlantNet app
+   - Free tier available
+   - `https://my.plantnet.org`
+
+**Recommended approach:**
+Use ALA as the primary source for Australian context and noxious weed status. Use GBIF or Trefle for general plant management information. Fall back to PlantNet for photo-based identification where the user cannot identify a plant by name.
+
+**Confirmation flow:**
+After user enters an approximate plant name, app queries data source and presents a short list of matches. User selects the correct match or triggers a clarifying question flow if no match is found.
+
+### Req 2.4 — Plant record fields
+
+Each plant record should include:
+- Plant name (user-entered, approximate)
+- Confirmed species (resolved via data source)
+- Grid reference
+- Notes (free text, optional) — for any additional information the user wants to record about that plant
