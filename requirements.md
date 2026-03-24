@@ -11,9 +11,10 @@ An app to help people manage their garden.
 2. Create an inventory of the plants in their garden
    1. User enters a plant name
    2. User enters a grid location
-   3. App helps clarify plant type with user, asking questions if necessary
-   4. App finds appropriate management information
-   5. App represents each plant on the grid at its location
+   3. User enters other relevant text about the plant
+   4. App helps clarify plant type with user, asking questions if necessary
+   5. App finds appropriate management information
+   6. App represents each plant on the grid at its location
 3. See monthly management plan
    1. App creates calendar of activities for plants based on season, date etc. Activities include:
       1. Pruning
