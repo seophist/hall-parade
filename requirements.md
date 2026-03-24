@@ -51,4 +51,4 @@ An app to help people manage their garden.
 
 No API keys required — appropriate for a single-file HTML app with no secure backend.
 
-**Confirmation step:** After lookup, app displa
+**Confirmation step** After lookup, app displays derived values (hemisphere, elevation, council/LGA, climate zone) with an edit option for each field, allowing users to correct any inaccuracies before proceeding.
