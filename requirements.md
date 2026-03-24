@@ -1,4 +1,4 @@
-# Broad requirements
+# Broad requirements (Ben)
 An app to help people manage their garden.
 ## User requirements
 1. Define details of their garden
@@ -24,7 +24,7 @@ An app to help people manage their garden.
    1. App can display or link to stanardised information about each plant
    2. App can show whether an activity is recommended currently (e.g. whether pruning the plant right now is ideal, acceptable, or harmful)
 
-## Technical decisions
+## Technical decisions (Claude)
 
 ### Req 1.2 — Garden location input and derived data
 
