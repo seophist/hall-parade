@@ -15,10 +15,16 @@
   - Stores information about the garden grid for the prototype
 - gardenapp_v0_inventory.csv
   - Stores an inventory of plants in the garden for the prototype
+- requirements.md
+  - Main app requirements as created by Ben and Claude Chat
 
 ## Architecture
+- Web app must be built using Angular Material (material.angular.dev)
 
-Web app
-Mobile usage prevalent
-Angular Material (material.angular.dev)
-
+## Tech stack
+- Framework: Angular 19 (standalone components)
+- Component library: Angular Material (material.angular.dev)
+- Language: TypeScript
+- No server-side rendering required
+- Single-page application
+- Mobile first
