@@ -1,0 +1,5 @@
+- [CLAUDE.md](https://raw.githubusercontent.com/seophist/hall-parade/refs/heads/main/CLAUDE.md)
+- [gardenapp_v0.html](https://raw.githubusercontent.com/seophist/hall-parade/refs/heads/main/gardenapp_v0.html)
+- [gardenapp_v0_grid.json](https://raw.githubusercontent.com/seophist/hall-parade/refs/heads/main/gardenapp_v0_grid.json)
+- [gardenapp_v0_inventory.csv](https://raw.githubusercontent.com/seophist/hall-parade/refs/heads/main/gardenapp_v0_inventory.csv)
+- [requirements.md](https://raw.githubusercontent.com/seophist/hall-parade/refs/heads/main/requirements.md)
