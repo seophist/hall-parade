@@ -1439,7 +1439,7 @@ async function loadGrid() {
 
 async function loadPlants() {
   const saved = localStorage.getItem(PLANT_KEY);
-  if (saved) { try { plants = JSON.parse(saved); return; } catch(e) {} }
+  if (saved) { try { const p = JSON.parse(saved); if (p.length > 0) { plants = p; return; } } catch(e) {} }
   setLoadMsg('Fetching plant inventory…');
   try {
     const res = await fetch(CSV_URL);
